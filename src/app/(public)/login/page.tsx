@@ -37,11 +37,7 @@ export default function Login() {
 
             if (result.message && result.token) {
                 // Calcular a expiração como data ISO
-                const expiresAt = new Date(Date.now() + result.expiresIn * 1000).toISOString();
-
-                // Armazenar no localStorage
-                localStorage.setItem("accessToken", result.token);
-                localStorage.setItem("tokenExpiresAt", expiresAt);
+                const expiresAt = new Date(Date.now() + result.expiresIn! * 1000).toISOString();
 
                 // Armazenar em cookies
                 document.cookie = `accessToken=${result.token}; path=/; SameSite=Strict;`;
