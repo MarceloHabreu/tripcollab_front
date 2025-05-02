@@ -48,7 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
     };
 
     return (
-        <div className="flex justify-between items-center p-4 px-10 bg-customBlue h-16 w-full shadow-sm">
+        <div className="flex justify-between items-center p-4 px-14 bg-customBlue h-20 w-full shadow-sm">
             <div>
                 <Link href="/">
                     <h2>
@@ -56,8 +56,8 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
                             className="hover:text-customGreen"
                             src={logoTitle}
                             alt="logoTitleHome"
-                            height={85}
-                            width={85}
+                            height={90}
+                            width={90}
                         />
                     </h2>
                 </Link>
@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
                 <button
                     onClick={handleLogout}
                     disabled={isLoggingOut}
-                    className="flex items-center mr-2 gap-2 text-gray-50 font-medium bg-coral px-4 py-2 rounded-lg hover:bg-teal-500 transition-colors disabled:opacity-50"
+                    className="flex items-center mr-2 gap-2 text-gray-50 font-medium bg-red-500 px-4 py-2 rounded-lg hover:bg-red-700 transition-colors disabled:opacity-50"
                 >
                     <FiLogOut className="" />
                     {isLoggingOut ? "Logging out..." : "Logout"}
@@ -89,7 +89,7 @@ export const NavItem: React.FC<NavItemsProps> = ({ href, label, icon }) => {
 
     return (
         <Link
-            href={href}
+            href={href || ""}
             className={`flex items-center m-1 px-4 py-2 gap-2 text-base font-medium rounded-lg transition-colors duration-200 ${
                 isActive
                     ? "text-customGreen bg-customBlue/20"
